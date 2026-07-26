@@ -3,42 +3,202 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vibes Wine — атмосферные вина · Маруся, Волгоград</title>
+<title>Vibes Wine — вино, которое помнит место</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Newsreader:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,opsz,wght@0,8..30,400;0,8..30,600;1,8..30,500;1,8..30,600&family=Spectral:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{ --bg:#16110B; --gold:#C89355; --gold-bright:#E3B876; --parchment:#EDE1C8; --parchment-dim:#A79878; --line:rgba(200,147,85,0.28); }
-  *{box-sizing:border-box;}
-  html,body{ margin:0; padding:0; background:var(--bg); color:var(--parchment); font-family:'Newsreader',serif; }
-  body{ background: radial-gradient(ellipse 900px 500px at 50% -10%, rgba(200,147,85,0.10), transparent 60%), var(--bg); }
-  .page{ max-width:640px; margin:0 auto; padding:40px 24px 64px; }
-  .brand{ font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-bright); margin-bottom:8px; }
+  :root{
+    --bg:#2A2117; --gold:#C89355; --gold-bright:#E3B876;
+    --parchment:#EDE1C8; --parchment-dim:#A79878; --line:rgba(200,147,85,0.28);
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; background:var(--bg); color:var(--parchment); font-family:'Spectral',serif; }
+  body{
+    background:
+      radial-gradient(ellipse 900px 500px at 50% -10%, rgba(200,147,85,0.10), transparent 60%),
+      radial-gradient(ellipse 700px 400px at 90% 100%, rgba(168,85,44,0.08), transparent 60%),
+      var(--bg);
+  }
+  .page{ max-width:680px; margin:0 auto; padding:28px 24px 64px; }
+
+  .brand-row{ display:flex; align-items:center; justify-content:space-between; padding-bottom:18px; border-bottom:1px solid var(--line); margin-bottom:40px; }
+  .brand{ font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-bright); }
   .brand b{ color:var(--parchment); font-weight:500; }
-  h1{ font-family:'Fraunces', serif; font-style:italic; font-weight:500; font-size:clamp(26px,6vw,36px); margin:0 0 6px; }
-  .sub{ color:var(--parchment-dim); font-size:15px; margin-bottom:44px; }
-  .list{ display:flex; flex-direction:column; gap:0; border-top:1px solid var(--line); }
-  a.item{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:22px 4px; border-bottom:1px solid var(--line); text-decoration:none; color:var(--parchment); transition:opacity .15s; }
-  a.item:hover{ opacity:0.7; }
-  .num{ font-family:'Fraunces',serif; font-weight:600; font-size:22px; color:var(--gold-bright); white-space:nowrap; }
-  .label{ font-size:15px; color:var(--parchment-dim); text-align:right; }
-  footer{ margin-top:48px; font-family:'JetBrains Mono', monospace; font-size:10px; color:var(--parchment-dim); text-align:right; }
+  .domain{ font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.06em; color:var(--parchment-dim); }
+
+  h1.hook{ font-family:'Piazzolla',serif; font-style:italic; font-weight:500; font-size:clamp(30px,7vw,46px); line-height:1.16; margin:0 0 16px; }
+  .lede{ font-size:17px; line-height:1.7; color:var(--parchment-dim); max-width:52ch; margin-bottom:44px; }
+  .lede b{ color:var(--parchment); font-weight:500; }
+
+  /* Signature: ripple timeline — a drop at "today" whose rings pass exactly through each epoch */
+  .ripple-wrap{ margin: 0 0 56px; }
+  .ripple-wrap svg{ width:100%; height:auto; display:block; overflow:hidden; }
+  .ripple-caption{ font-family:'JetBrains Mono', monospace; font-size:10.5px; letter-spacing:0.08em; color:var(--parchment-dim); text-align:center; margin-top:10px; }
+  @media (prefers-reduced-motion: no-preference){
+    .ring{ transform-origin: 40px 140px; animation: ripple 5s ease-in-out infinite; }
+    .ring:nth-of-type(1){ animation-delay: 0s; }
+    .ring:nth-of-type(2){ animation-delay: 0.25s; }
+    .ring:nth-of-type(3){ animation-delay: 0.5s; }
+    .ring:nth-of-type(4){ animation-delay: 0.75s; }
+    .ring:nth-of-type(5){ animation-delay: 1s; }
+    @keyframes ripple{ 0%,100%{ opacity:0.9; } 50%{ opacity:0.35; } }
+  }
+
+  .eyebrow{ font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold-bright); margin-bottom:10px; }
+  section{ margin-bottom:60px; }
+  h2{ font-family:'Piazzolla',serif; font-style:italic; font-weight:500; font-size:clamp(22px,4.5vw,28px); margin:0 0 22px; color:var(--parchment); }
+
+  .steps{ display:flex; flex-direction:column; }
+  .step{ display:flex; gap:18px; padding:20px 0; border-bottom:1px solid var(--line); }
+  .step:first-child{ border-top:1px solid var(--line); }
+  .step-num{ font-family:'Piazzolla',serif; font-weight:600; font-size:22px; color:var(--gold-bright); min-width:28px; }
+  .step-body b{ display:block; font-size:16.5px; color:var(--parchment); margin-bottom:4px; font-weight:500; }
+  .step-body span{ font-size:14.5px; color:var(--parchment-dim); line-height:1.55; }
+
+  .pilot{ border-top:1px solid var(--line); padding-top:32px; }
+  .pilot p{ font-size:16px; line-height:1.75; color:var(--parchment-dim); margin:0 0 16px; max-width:56ch; }
+  .pilot .venue{ font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.06em; color:var(--gold-bright); margin-bottom:18px; }
+  .era-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:20px; }
+  .era-card{ display:flex; flex-direction:column; }
+  .era-photo{ position:relative; border:1px solid var(--line); overflow:hidden; aspect-ratio:4/3; background:#000; }
+  .era-photo img{ width:100%; height:100%; object-fit:cover; display:block; filter: grayscale(0.5) sepia(0.35) contrast(1.05) brightness(0.85); }
+  .era-photo::after{ content:''; position:absolute; inset:0; background: linear-gradient(180deg, rgba(42,33,23,0.05) 40%, rgba(42,33,23,0.55) 100%); pointer-events:none; }
+  .era-card b{ display:block; font-family:'Piazzolla',serif; font-weight:600; font-size:14.5px; color:var(--gold-bright); margin-top:10px; }
+  .era-card span{ display:block; font-family:'JetBrains Mono', monospace; font-size:10.5px; letter-spacing:0.03em; color:var(--parchment-dim); margin-top:3px; line-height:1.5; }
+  .era-credit{ font-family:'JetBrains Mono', monospace; font-size:8.5px; color:var(--parchment-dim); opacity:0.6; margin-top:4px; }
+
+  .partners{ border-top:1px solid var(--line); padding-top:32px; }
+  .partners p{ font-size:16px; line-height:1.75; color:var(--parchment-dim); margin:0 0 24px; max-width:56ch; }
+  .cta{ display:inline-flex; align-items:center; gap:10px; font-family:'JetBrains Mono', monospace; font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--bg); background:var(--gold-bright); padding:14px 22px; text-decoration:none; transition:opacity .15s; }
+  .cta:hover{ opacity:0.85; }
+  .cta svg{ width:14px; height:14px; }
+
+  footer{ margin-top:8px; padding-top:22px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; }
+  footer .wibes{ font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); }
+  footer .addr{ font-family:'JetBrains Mono', monospace; font-size:10px; color:var(--parchment-dim); text-align:right; line-height:1.6; }
+
+  @media (prefers-reduced-motion: no-preference){
+    .fade-in{ animation: rise 0.7s ease-out both; }
+    .fade-in:nth-of-type(2){ animation-delay:0.08s; }
+    .fade-in:nth-of-type(3){ animation-delay:0.16s; }
+    @keyframes rise{ from{ opacity:0; transform:translateY(10px);} to{ opacity:1; transform:translateY(0);} }
+  }
+  @media (max-width:420px){ .page{ padding:20px 16px 48px; } }
 </style>
 </head>
 <body>
 <div class="page">
-  <div class="brand"><b>VIBES WINE</b> · атмосферные вина</div>
-  <h1>Винная карта времени</h1>
-  <div class="sub">Маруся · ул. Аллея Героев, 1 · Волгоград</div>
 
-  <div class="list">
-    <a class="item" href="/100/"><span class="num">100 лет назад</span><span class="label">~1926 · Царицын → Сталинград</span></a>
-    <a class="item" href="/500/"><span class="num">500 лет назад</span><span class="label">~1526 · закат Золотой Орды</span></a>
-    <a class="item" href="/1000/"><span class="num">1000 лет назад</span><span class="label">~1026 · переволока Волга–Дон</span></a>
-    <a class="item" href="/10000/"><span class="num">10 000 лет назад</span><span class="label">конец ледникового периода</span></a>
-    <a class="item" href="/1000000/"><span class="num">1 000 000 лет назад</span><span class="label">Донское оледенение</span></a>
+  <div class="brand-row">
+    <div class="brand"><b>VIBES WINE</b> · атмосферные вина</div>
+    <div class="domain">vibeswine.ru</div>
   </div>
 
-  <footer>По материалам открытых исторических источников</footer>
+  <h1 class="hook fade-in">Место помнит.<br>Вино — рассказывает.</h1>
+  <div class="lede fade-in">Vibes Wine подбирает вино не под блюдо и не под настроение — а под <b>эпоху</b>, которая когда-то происходила ровно на этом месте. Сканируете QR-код у бутылки — и оказываетесь на десять, сто или миллион лет раньше.</div>
+
+  <div class="ripple-wrap fade-in">
+    <svg viewBox="0 0 680 160" xmlns="http://www.w3.org/2000/svg">
+      <path class="ring" d="M -80,140 A 120,70 0 0 1 160,140"  fill="none" stroke="var(--gold)" stroke-width="1" opacity="0.55"/>
+      <path class="ring" d="M -200,140 A 240,62 0 0 1 280,140" fill="none" stroke="var(--gold)" stroke-width="1" opacity="0.42"/>
+      <path class="ring" d="M -300,140 A 340,54 0 0 1 380,140" fill="none" stroke="var(--gold)" stroke-width="1" opacity="0.32"/>
+      <path class="ring" d="M -420,140 A 460,46 0 0 1 500,140" fill="none" stroke="var(--gold)" stroke-width="1" opacity="0.22"/>
+      <path class="ring" d="M -560,140 A 600,38 0 0 1 640,140" fill="none" stroke="var(--gold)" stroke-width="1" opacity="0.14"/>
+
+      <line x1="0" y1="140" x2="680" y2="140" stroke="var(--line)" stroke-width="1"/>
+
+      <circle cx="40" cy="140" r="4" fill="var(--gold-bright)"/>
+      <text x="40" y="122" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1" fill="var(--gold-bright)">СЕГОДНЯ</text>
+
+      <g font-family="Piazzolla, serif" font-weight="600" fill="var(--gold-bright)">
+        <circle cx="160" cy="140" r="3" fill="var(--parchment)"/>
+        <text x="160" y="122" text-anchor="middle" font-size="15">100</text>
+        <circle cx="280" cy="140" r="3" fill="var(--parchment)"/>
+        <text x="280" y="122" text-anchor="middle" font-size="15">500</text>
+        <circle cx="380" cy="140" r="3" fill="var(--parchment)"/>
+        <text x="380" y="122" text-anchor="middle" font-size="15">1 000</text>
+        <circle cx="500" cy="140" r="3" fill="var(--parchment)"/>
+        <text x="500" y="122" text-anchor="middle" font-size="15">10 000</text>
+        <circle cx="640" cy="140" r="3" fill="var(--parchment)"/>
+        <text x="640" y="122" text-anchor="middle" font-size="14">1 000 000</text>
+      </g>
+
+      <g font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="0.5" fill="var(--parchment-dim)">
+        <text x="160" y="156" text-anchor="middle">лет назад</text>
+        <text x="640" y="156" text-anchor="middle">лет назад</text>
+      </g>
+    </svg>
+    <div class="ripple-caption">Каждое кольцо ряби — эпоха, вплетённая в винную карту</div>
+  </div>
+
+  <section>
+    <div class="eyebrow">Для гостя</div>
+    <h2>Сканируете — и оказываетесь в другом времени</h2>
+    <div class="steps">
+      <div class="step fade-in">
+        <div class="step-num">01</div>
+        <div class="step-body"><b>Наведите камеру на QR у бутылки</b><span>Каждое «атмосферное» вино в карте помечено кодом одной из эпох.</span></div>
+      </div>
+      <div class="step fade-in">
+        <div class="step-num">02</div>
+        <div class="step-body"><b>Узнайте, что здесь происходило</b><span>Короткая история места — сто, тысячу или миллион лет назад, с картой и архивным фото.</span></div>
+      </div>
+      <div class="step fade-in">
+        <div class="step-num">03</div>
+        <div class="step-body"><b>Попробуйте вино этой эпохи</b><span>Каждое вино в карте подобрано под настроение и характер своего времени.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pilot">
+    <div class="eyebrow">Пилотный проект</div>
+    <h2>Первое место — ресторан «Маруся»</h2>
+    <div class="venue">Волгоград · ул. Аллея Героев, 1</div>
+    <p>Волгоград — редкий случай, когда история одного адреса тянется от палеолита до наших дней: переволока Волга–Дон, закат Золотой Орды, переименование Царицына в Сталинград. Для «Маруси» собрана карта из пяти эпох — вина подобраны под каждую.</p>
+    <div class="era-grid">
+      <div class="era-card">
+        <div class="era-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tsaritsyn.%20General%20view%20of%20the%20city%20and%20the%20Volga.jpg" alt="Царицын, общий вид города и Волги" loading="lazy"></div>
+        <b>100 лет назад</b><span>Царицын → Сталинград</span>
+        <div class="era-credit">Фото: Wikimedia Commons, общественное достояние</div>
+      </div>
+      <div class="era-card">
+        <div class="era-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ceramic%20Golden%20Horde%20GIM.jpg" alt="Керамика Золотой Орды, Государственный исторический музей" loading="lazy"></div>
+        <b>500 лет назад</b><span>закат Золотой Орды</span>
+        <div class="era-credit">Фото: А. Вуколов / ГИМ, Wikimedia Commons, CC BY-SA</div>
+      </div>
+      <div class="era-card">
+        <div class="era-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sarkel.jpg" alt="Раскопки хазарской крепости Саркел" loading="lazy"></div>
+        <b>1 000 лет назад</b><span>переволока Волга–Дон</span>
+        <div class="era-credit">Раскопки М. Артамонова, 1930-е · Wikimedia Commons, общественное достояние</div>
+      </div>
+      <div class="era-card">
+        <div class="era-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Smithsonian%20woolly%20mammoth.jpg" alt="Скелет мамонта, Смитсоновский институт" loading="lazy"></div>
+        <b>10 000 лет назад</b><span>конец ледникового периода</span>
+        <div class="era-credit">Фото: K. Burkett, Wikimedia Commons, CC BY-SA</div>
+      </div>
+      <div class="era-card">
+        <div class="era-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pleistocene%20glacial%20till%20over%20Precambrian%20tillite%20(Straight%20Lake%20West%20roadcut%2C%20north%20of%20Temagami%2C%20Ontario%2C%20Canada)%203%20(33938501728).jpg" alt="Ледниковые отложения плейстоцена (иллюстративное фото)" loading="lazy"></div>
+        <b>1 000 000 лет назад</b><span>донское оледенение</span>
+        <div class="era-credit">Иллюстративное фото · J. St. John, Wikimedia Commons, CC BY</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners">
+    <div class="eyebrow">Для ресторанов</div>
+    <h2>Так же может звучать любое место</h2>
+    <p>Концепция строится на истории конкретного адреса — а своя история есть у любого ресторана, бара или отеля. Мы помогаем найти её и собрать под неё винную карту: от исследования места до готовых страниц с QR-кодами.</p>
+    <a class="cta" href="mailto:hello@vibeswine.ru">
+      Рассказать нам о своём месте
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </section>
+
+  <footer>
+    <div class="wibes">Vibes Wine — винная карта времени</div>
+    <div class="addr">Пилотный проект: Маруся, Волгоград<br>vibeswine.ru</div>
+  </footer>
+
 </div>
 </body>
 </html>
