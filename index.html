@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibes Wine — атмосферные вина · Маруся, Волгоград</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Newsreader:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#16110B; --gold:#C89355; --gold-bright:#E3B876; --parchment:#EDE1C8; --parchment-dim:#A79878; --line:rgba(200,147,85,0.28); }
+  *{box-sizing:border-box;}
+  html,body{ margin:0; padding:0; background:var(--bg); color:var(--parchment); font-family:'Newsreader',serif; }
+  body{ background: radial-gradient(ellipse 900px 500px at 50% -10%, rgba(200,147,85,0.10), transparent 60%), var(--bg); }
+  .page{ max-width:640px; margin:0 auto; padding:40px 24px 64px; }
+  .brand{ font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-bright); margin-bottom:8px; }
+  .brand b{ color:var(--parchment); font-weight:500; }
+  h1{ font-family:'Fraunces', serif; font-style:italic; font-weight:500; font-size:clamp(26px,6vw,36px); margin:0 0 6px; }
+  .sub{ color:var(--parchment-dim); font-size:15px; margin-bottom:44px; }
+  .list{ display:flex; flex-direction:column; gap:0; border-top:1px solid var(--line); }
+  a.item{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:22px 4px; border-bottom:1px solid var(--line); text-decoration:none; color:var(--parchment); transition:opacity .15s; }
+  a.item:hover{ opacity:0.7; }
+  .num{ font-family:'Fraunces',serif; font-weight:600; font-size:22px; color:var(--gold-bright); white-space:nowrap; }
+  .label{ font-size:15px; color:var(--parchment-dim); text-align:right; }
+  footer{ margin-top:48px; font-family:'JetBrains Mono', monospace; font-size:10px; color:var(--parchment-dim); text-align:right; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="brand"><b>VIBES WINE</b> · атмосферные вина</div>
+  <h1>Винная карта времени</h1>
+  <div class="sub">Маруся · ул. Аллея Героев, 1 · Волгоград</div>
+
+  <div class="list">
+    <a class="item" href="/100/"><span class="num">100 лет назад</span><span class="label">~1926 · Царицын → Сталинград</span></a>
+    <a class="item" href="/500/"><span class="num">500 лет назад</span><span class="label">~1526 · закат Золотой Орды</span></a>
+    <a class="item" href="/1000/"><span class="num">1000 лет назад</span><span class="label">~1026 · переволока Волга–Дон</span></a>
+    <a class="item" href="/10000/"><span class="num">10 000 лет назад</span><span class="label">конец ледникового периода</span></a>
+    <a class="item" href="/1000000/"><span class="num">1 000 000 лет назад</span><span class="label">Донское оледенение</span></a>
+  </div>
+
+  <footer>По материалам открытых исторических источников</footer>
+</div>
+</body>
+</html>

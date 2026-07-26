@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibes Wine — 1000 лет назад · Маруся, Волгоград</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Newsreader:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --bg: #16110B;
+    --gold: #C89355;
+    --gold-bright: #E3B876;
+    --parchment: #EDE1C8;
+    --parchment-dim: #A79878;
+    --line: rgba(200,147,85,0.28);
+  }
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; padding:0; background: var(--bg); color: var(--parchment); font-family: 'Newsreader', serif; }
+  body{
+    background:
+      radial-gradient(ellipse 900px 500px at 50% -10%, rgba(200,147,85,0.10), transparent 60%),
+      radial-gradient(ellipse 700px 400px at 90% 100%, rgba(168,85,44,0.08), transparent 60%),
+      var(--bg);
+  }
+  .page{ max-width: 640px; margin: 0 auto; padding: 28px 24px 64px; }
+  .brand-row{ display:flex; align-items:center; justify-content:space-between; padding-bottom: 18px; border-bottom: 1px solid var(--line); margin-bottom: 34px; }
+  .brand{ font-family:'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-bright); }
+  .brand b{ color: var(--parchment); font-weight:500; }
+  .locale{ font-family:'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: var(--parchment-dim); text-align:right; }
+  .medallion-wrap{ display:flex; justify-content:center; margin: 6px 0 22px; }
+  .medallion{ width: 190px; height: 190px; position:relative; }
+  .medallion svg{ width:100%; height:100%; display:block; }
+  .medallion-label{ text-align:center; font-family:'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--parchment-dim); margin-top: 10px; }
+  h1.hook{ font-family:'Fraunces', serif; font-style: italic; font-weight: 500; font-size: clamp(26px, 6vw, 38px); line-height: 1.18; text-align:center; color: var(--parchment); margin: 0 0 6px; }
+  .period-sub{ text-align:center; font-family:'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.1em; color: var(--gold-bright); margin-bottom: 40px; }
+  .route{ display:flex; align-items:center; gap: 10px; margin: 6px 0 40px; color: var(--gold); }
+  .route .cap{ font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:.10em; color:var(--parchment-dim); white-space:nowrap;}
+  .route svg{ flex:1; height:14px; width:100%; }
+  .map-frame{ border: 1px solid var(--line); background: linear-gradient(180deg, rgba(200,147,85,0.05), transparent); padding: 18px; margin-bottom: 20px; }
+  .map-frame svg{ width:100%; height:auto; display:block; }
+  .map-caption{ font-family:'JetBrains Mono', monospace; font-size: 10.5px; color: var(--parchment-dim); letter-spacing: 0.04em; text-align:center; margin-top: 12px; }
+  .photo-frame{ position:relative; border:1px solid var(--line); overflow:hidden; margin-bottom:14px; background:#000; }
+  .photo-frame img{ width:100%; display:block; filter: grayscale(0.5) sepia(0.35) contrast(1.05) brightness(0.85); }
+  .photo-frame::after{ content:''; position:absolute; inset:0; background: linear-gradient(180deg, rgba(22,17,11,0.05) 40%, rgba(22,17,11,0.55) 100%); pointer-events:none; }
+  .photo-caption{ font-family:'JetBrains Mono', monospace; font-size: 10.5px; color: var(--parchment-dim); letter-spacing: 0.03em; text-align:center; margin: 10px 0 2px; }
+  .photo-credit{ font-family:'JetBrains Mono', monospace; font-size: 9px; color: var(--parchment-dim); opacity:0.6; letter-spacing: 0.02em; text-align:center; margin-bottom: 36px; }
+  .story{ font-size: 17px; line-height: 1.75; color: var(--parchment); }
+  .story p{ margin: 0 0 20px; }
+  .story p:first-of-type::first-letter{ font-family:'Fraunces', serif; font-weight:600; font-size: 3.4em; line-height: 0.78; float:left; padding: 4px 8px 0 0; color: var(--gold-bright); }
+  .story .fact{ color: var(--gold-bright); font-style: italic; }
+  .wine-card{ margin-top: 10px; border-top: 1px solid var(--line); padding-top: 30px; }
+  .wine-eyebrow{ font-family:'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--parchment-dim); margin-bottom: 12px; }
+  .wine-name{ font-family:'Fraunces', serif; font-weight: 600; font-size: 24px; color: var(--parchment); margin: 0 0 4px; }
+  .wine-region{ font-family:'JetBrains Mono', monospace; font-size: 12px; color: var(--gold-bright); margin-bottom: 16px; }
+  .wine-note{ font-size: 15.5px; line-height: 1.6; color: var(--parchment-dim); max-width: 54ch; }
+  footer{ margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); display:flex; justify-content:space-between; align-items:baseline; gap: 12px; flex-wrap: wrap; }
+  footer .wibes{ font-family:'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform:uppercase; color: var(--gold); }
+  footer .source{ font-family:'JetBrains Mono', monospace; font-size: 10px; color: var(--parchment-dim); text-align:right; }
+  @media (prefers-reduced-motion: no-preference){
+    .fade-in{ animation: rise 0.7s ease-out both; }
+    .fade-in:nth-of-type(2){ animation-delay: 0.08s; }
+    .fade-in:nth-of-type(3){ animation-delay: 0.16s; }
+    @keyframes rise{ from{ opacity:0; transform: translateY(10px);} to{ opacity:1; transform: translateY(0);} }
+  }
+  @media (max-width: 420px){ .page{ padding: 20px 16px 48px; } .medallion{ width: 150px; height:150px; } }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="brand-row">
+    <div class="brand"><b>VIBES WINE</b> · атмосферные вина</div>
+    <div class="locale">МАРУСЯ<br>ВОЛГОГРАД</div>
+  </div>
+
+  <div class="medallion-wrap fade-in">
+    <div class="medallion">
+      <svg viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="94" fill="none" stroke="var(--gold)" stroke-width="1" opacity="0.4"/>
+        <g stroke="var(--gold)" stroke-width="1" opacity="0.5">
+          <path d="M20,60 L40,60 M20,90 L36,90 M24,120 L40,120 M20,150 L38,150"/>
+          <path d="M180,60 L160,60 M180,90 L164,90 M176,120 L160,120 M180,150 L162,150"/>
+        </g>
+        <circle cx="100" cy="100" r="72" fill="none" stroke="var(--gold-bright)" stroke-width="1" stroke-dasharray="6 4" opacity="0.7"/>
+        <text x="100" y="112" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="44" fill="var(--gold-bright)">1000</text>
+        <text x="100" y="132" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="2" fill="var(--parchment-dim)">ЛЕТ НАЗАД</text>
+      </svg>
+    </div>
+  </div>
+  <div class="medallion-label fade-in">~1026 год</div>
+
+  <h1 class="hook fade-in">«Переволока между двух рек»</h1>
+  <div class="period-sub">полвека после падения Хазарского каганата</div>
+
+  <div class="route">
+    <span class="cap">ИТИЛЬ (ВОЛГА)</span>
+    <svg viewBox="0 0 300 14" preserveAspectRatio="none">
+      <line x1="0" y1="7" x2="300" y2="7" stroke="var(--gold)" stroke-width="1" stroke-dasharray="1 6" stroke-linecap="round"/>
+      <circle cx="60" cy="7" r="2.5" fill="var(--gold-bright)"/>
+      <circle cx="150" cy="7" r="2.5" fill="var(--gold-bright)"/>
+      <circle cx="240" cy="7" r="2.5" fill="var(--gold-bright)"/>
+    </svg>
+    <span class="cap">ДОН</span>
+  </div>
+
+  <div class="map-frame">
+    <svg viewBox="0 0 560 240">
+      <defs>
+        <radialGradient id="g1000" cx="50%" cy="40%" r="70%">
+          <stop offset="0%" stop-color="#8B4226" stop-opacity="0.14"/>
+          <stop offset="100%" stop-color="#8B4226" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="560" height="240" fill="url(#g1000)"/>
+      <path d="M30,30 C110,70 80,120 140,150 C200,180 210,210 260,225" fill="none" stroke="#7A9AA0" stroke-width="2.5" opacity="0.5"/>
+      <text x="60" y="18" font-family="JetBrains Mono, monospace" font-size="9" fill="var(--parchment-dim)" letter-spacing="0.5">ИТИЛЬ (ВОЛГА)</text>
+      <path d="M530,20 C460,60 480,110 410,140 C350,165 330,195 270,220" fill="none" stroke="#7A9AA0" stroke-width="2" opacity="0.4"/>
+      <text x="480" y="18" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="9" fill="var(--parchment-dim)" letter-spacing="0.5">ДОН</text>
+      <line x1="140" y1="150" x2="270" y2="220" stroke="var(--gold-bright)" stroke-width="1.3" stroke-dasharray="2 6" opacity="0.8"/>
+      <!-- Sarkel fortress marker on the Don side -->
+      <rect x="255" y="205" width="18" height="14" fill="none" stroke="var(--gold-bright)" stroke-width="1.3"/>
+      <text x="264" y="238" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="var(--gold-bright)" letter-spacing="0.5">САРКЕЛ</text>
+      <!-- nomadic tent markers scattered on steppe -->
+      <g stroke="var(--gold)" opacity="0.45" fill="none">
+        <path d="M400,60 L410,45 L420,60 Z"/>
+        <path d="M440,90 L450,75 L460,90 Z"/>
+        <path d="M90,190 L100,175 L110,190 Z"/>
+      </g>
+    </svg>
+    <div class="map-caption">Волго-Донская переволока и хазарская крепость Саркел, 1026 год</div>
+  </div>
+
+  <div class="photo-frame">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sarkel.jpg" alt="Аэрофотосъёмка раскопок хазарской крепости Саркел, 1930-е" loading="lazy">
+  </div>
+  <div class="photo-caption">Аэрофотосъёмка раскопок хазарской крепости Саркел, 1930-е</div>
+  <div class="photo-credit">Фото: М. И. Артамонов, общественное достояние</div>
+
+  <div class="story fade-in">
+    
+    <p>Хазарский каганат, столетиями державший под контролем низовья Волги и Дона, пал полвека назад — в 969 году его разгромил князь Святослав. Держава, которая брала дань с окрестных племён и чеканила собственное подражание арабским дирхемам, рассыпалась почти в одночасье. Степь, где сегодня стоит ресторан, перешла под власть кочевников-печенегов — они пришли на смену хазарам и теперь сами решают, чей караван пройдёт, а чей будет разграблен.</p>
+    <p>Именно здесь, в самом узком месте между Волгой (арабские и хазарские источники называли её <span class="fact">Итиль</span>) и Доном, — древняя переволока: около семидесяти километров, где суда и товары посуху перетаскивали между двумя реками. Донскую сторону переволоки веками контролировала хазарская крепость <span class="fact">Саркел</span> — теперь, после падения каганата, её значение стремительно меркнет. По этому пути арабское серебро когда-то доходило до Руси и Балтики.</p>
+    <p>Но к 1026 году караванная торговля уже в упадке: набеги печенегов делают каждый переход рискованным предприятием. Через пару десятилетий их самих вытеснят половцы — а великий торговый путь так и не вернёт себе прежнего оживления.</p>
+
+  </div>
+
+  <div class="wine-card fade-in">
+    <div class="wine-eyebrow">Вино этой эпохи</div>
+    <div class="wine-name">Tenuta Maccan · Refosco Friuli Grave DOC</div>
+    <div class="wine-region">Фриули, Италия · Красное</div>
+    <div class="wine-note">Рефоско — одна из древнейших итальянских лоз, известная ещё с римских времён: терпкая, плотная, суровая. Как степной путь между Волгой и Доном, она несёт в себе привкус долгой и не всегда безопасной дороги.</div>
+  </div>
+
+  <footer>
+    <div class="wibes">Vibes Wine — винная карта времени</div>
+    <div class="source">По материалам открытых исторических источников<br>Маруся · ул. Аллея Героев, 1 · Волгоград</div>
+  </footer>
+
+</div>
+</body>
+</html>

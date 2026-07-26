@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibes Wine — 500 лет назад · Маруся, Волгоград</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Newsreader:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --bg: #16110B;
+    --gold: #C89355;
+    --gold-bright: #E3B876;
+    --parchment: #EDE1C8;
+    --parchment-dim: #A79878;
+    --line: rgba(200,147,85,0.28);
+  }
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; padding:0; background: var(--bg); color: var(--parchment); font-family: 'Newsreader', serif; }
+  body{
+    background:
+      radial-gradient(ellipse 900px 500px at 50% -10%, rgba(200,147,85,0.10), transparent 60%),
+      radial-gradient(ellipse 700px 400px at 90% 100%, rgba(168,85,44,0.08), transparent 60%),
+      var(--bg);
+  }
+  .page{ max-width: 640px; margin: 0 auto; padding: 28px 24px 64px; }
+  .brand-row{ display:flex; align-items:center; justify-content:space-between; padding-bottom: 18px; border-bottom: 1px solid var(--line); margin-bottom: 34px; }
+  .brand{ font-family:'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-bright); }
+  .brand b{ color: var(--parchment); font-weight:500; }
+  .locale{ font-family:'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: var(--parchment-dim); text-align:right; }
+  .medallion-wrap{ display:flex; justify-content:center; margin: 6px 0 22px; }
+  .medallion{ width: 190px; height: 190px; position:relative; }
+  .medallion svg{ width:100%; height:100%; display:block; }
+  .medallion-label{ text-align:center; font-family:'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--parchment-dim); margin-top: 10px; }
+  h1.hook{ font-family:'Fraunces', serif; font-style: italic; font-weight: 500; font-size: clamp(26px, 6vw, 38px); line-height: 1.18; text-align:center; color: var(--parchment); margin: 0 0 6px; }
+  .period-sub{ text-align:center; font-family:'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.1em; color: var(--gold-bright); margin-bottom: 40px; }
+  .route{ display:flex; align-items:center; gap: 10px; margin: 6px 0 40px; color: var(--gold); }
+  .route .cap{ font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:.10em; color:var(--parchment-dim); white-space:nowrap;}
+  .route svg{ flex:1; height:14px; width:100%; }
+  .map-frame{ border: 1px solid var(--line); background: linear-gradient(180deg, rgba(200,147,85,0.05), transparent); padding: 18px; margin-bottom: 20px; }
+  .map-frame svg{ width:100%; height:auto; display:block; }
+  .map-caption{ font-family:'JetBrains Mono', monospace; font-size: 10.5px; color: var(--parchment-dim); letter-spacing: 0.04em; text-align:center; margin-top: 12px; }
+  .photo-frame{ position:relative; border:1px solid var(--line); overflow:hidden; margin-bottom:14px; background:#000; }
+  .photo-frame img{ width:100%; display:block; filter: grayscale(0.5) sepia(0.35) contrast(1.05) brightness(0.85); }
+  .photo-frame::after{ content:''; position:absolute; inset:0; background: linear-gradient(180deg, rgba(22,17,11,0.05) 40%, rgba(22,17,11,0.55) 100%); pointer-events:none; }
+  .photo-caption{ font-family:'JetBrains Mono', monospace; font-size: 10.5px; color: var(--parchment-dim); letter-spacing: 0.03em; text-align:center; margin: 10px 0 2px; }
+  .photo-credit{ font-family:'JetBrains Mono', monospace; font-size: 9px; color: var(--parchment-dim); opacity:0.6; letter-spacing: 0.02em; text-align:center; margin-bottom: 36px; }
+  .story{ font-size: 17px; line-height: 1.75; color: var(--parchment); }
+  .story p{ margin: 0 0 20px; }
+  .story p:first-of-type::first-letter{ font-family:'Fraunces', serif; font-weight:600; font-size: 3.4em; line-height: 0.78; float:left; padding: 4px 8px 0 0; color: var(--gold-bright); }
+  .story .fact{ color: var(--gold-bright); font-style: italic; }
+  .wine-card{ margin-top: 10px; border-top: 1px solid var(--line); padding-top: 30px; }
+  .wine-eyebrow{ font-family:'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--parchment-dim); margin-bottom: 12px; }
+  .wine-name{ font-family:'Fraunces', serif; font-weight: 600; font-size: 24px; color: var(--parchment); margin: 0 0 4px; }
+  .wine-region{ font-family:'JetBrains Mono', monospace; font-size: 12px; color: var(--gold-bright); margin-bottom: 16px; }
+  .wine-note{ font-size: 15.5px; line-height: 1.6; color: var(--parchment-dim); max-width: 54ch; }
+  footer{ margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); display:flex; justify-content:space-between; align-items:baseline; gap: 12px; flex-wrap: wrap; }
+  footer .wibes{ font-family:'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform:uppercase; color: var(--gold); }
+  footer .source{ font-family:'JetBrains Mono', monospace; font-size: 10px; color: var(--parchment-dim); text-align:right; }
+  @media (prefers-reduced-motion: no-preference){
+    .fade-in{ animation: rise 0.7s ease-out both; }
+    .fade-in:nth-of-type(2){ animation-delay: 0.08s; }
+    .fade-in:nth-of-type(3){ animation-delay: 0.16s; }
+    @keyframes rise{ from{ opacity:0; transform: translateY(10px);} to{ opacity:1; transform: translateY(0);} }
+  }
+  @media (max-width: 420px){ .page{ padding: 20px 16px 48px; } .medallion{ width: 150px; height:150px; } }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="brand-row">
+    <div class="brand"><b>VIBES WINE</b> · атмосферные вина</div>
+    <div class="locale">МАРУСЯ<br>ВОЛГОГРАД</div>
+  </div>
+
+  <div class="medallion-wrap fade-in">
+    <div class="medallion">
+      <svg viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="94" fill="none" stroke="var(--gold)" stroke-width="1" opacity="0.5"/>
+        <circle cx="100" cy="100" r="86" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="2 5" opacity="0.7"/>
+        <circle cx="100" cy="100" r="70" fill="none" stroke="var(--gold)" stroke-width="1" opacity="0.35"/>
+        <text x="100" y="112" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="52" fill="var(--gold-bright)">500</text>
+        <text x="100" y="132" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" letter-spacing="2" fill="var(--parchment-dim)">ЛЕТ НАЗАД</text>
+      </svg>
+    </div>
+  </div>
+  <div class="medallion-label fade-in">~1526 год</div>
+
+  <h1 class="hook fade-in">«Земля, которая ещё не стала Царицыном»</h1>
+  <div class="period-sub">за 63 года до основания крепости</div>
+
+  <div class="route">
+    <span class="cap">ВОЛГА</span>
+    <svg viewBox="0 0 300 14" preserveAspectRatio="none">
+      <line x1="0" y1="7" x2="300" y2="7" stroke="var(--gold)" stroke-width="1" stroke-dasharray="1 6" stroke-linecap="round"/>
+      <circle cx="60" cy="7" r="2.5" fill="var(--gold-bright)"/>
+      <circle cx="150" cy="7" r="2.5" fill="var(--gold-bright)"/>
+      <circle cx="240" cy="7" r="2.5" fill="var(--gold-bright)"/>
+    </svg>
+    <span class="cap">ДОН</span>
+  </div>
+
+  <div class="map-frame">
+    <svg viewBox="0 0 560 260">
+      <defs>
+        <radialGradient id="g500" cx="50%" cy="40%" r="70%">
+          <stop offset="0%" stop-color="#C89355" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#C89355" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="560" height="260" fill="url(#g500)"/>
+      <path d="M40,20 C120,60 90,110 150,150 C210,190 190,230 250,250" fill="none" stroke="#7A9AA0" stroke-width="2.5" opacity="0.55"/>
+      <path d="M520,30 C450,70 470,110 400,140 C340,165 320,200 260,220" fill="none" stroke="#7A9AA0" stroke-width="2" opacity="0.4"/>
+      <line x1="250" y1="150" x2="330" y2="150" stroke="var(--gold-bright)" stroke-width="1.5" stroke-dasharray="3 5"/>
+      <circle cx="290" cy="150" r="4" fill="var(--gold-bright)"/>
+      <text x="290" y="135" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="var(--gold-bright)" letter-spacing="1">ПЕРЕВОЛОКА</text>
+      <circle cx="150" cy="150" r="5" fill="none" stroke="var(--gold)" stroke-width="1.5"/>
+      <text x="150" y="172" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" fill="var(--parchment-dim)" letter-spacing="0.5">МЕЧЁТНОЕ</text>
+      <g fill="var(--gold)" opacity="0.3">
+        <circle cx="70" cy="220" r="1.4"/><circle cx="100" cy="235" r="1.4"/><circle cx="130" cy="210" r="1.4"/>
+        <circle cx="400" cy="60" r="1.4"/><circle cx="430" cy="80" r="1.4"/><circle cx="460" cy="55" r="1.4"/>
+        <circle cx="200" cy="40" r="1.4"/><circle cx="230" cy="60" r="1.4"/><circle cx="480" cy="180" r="1.4"/>
+      </g>
+      <g transform="translate(505,225)" stroke="var(--gold)" opacity="0.5" fill="none">
+        <circle r="16"/>
+        <line x1="0" y1="-16" x2="0" y2="16"/>
+        <line x1="-16" y1="0" x2="16" y2="0"/>
+      </g>
+    </svg>
+    <div class="map-caption">Стилизованная схема — сближение Волги и Дона у будущего Царицына, 1526 год</div>
+  </div>
+
+  <div class="photo-frame">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dirhems%20of%20the%20Golden%20Horde%2C%201251-1259.%20Bulgar.jpg" alt="Серебряные дирхемы Золотой Орды, Булгар" loading="lazy">
+  </div>
+  <div class="photo-caption">Серебряные дирхемы Золотой Орды, Булгар</div>
+  <div class="photo-credit">Фото: Wikimedia Commons</div>
+
+  <div class="story fade-in">
+    
+    <p>До основания Царицына оставалось ещё шестьдесят три года. Той крепости, что закроет южные рубежи Московского царства, здесь ещё нет и в помине — как нет и самого царства в этих краях. Земля, на которой сейчас стоит ресторан, — это степь, доставшаяся в наследство от Золотой Орды. Империя чингизидов распалась на осколки ещё столетие назад, но её тень лежит на этих берегах: южнее правит Астраханское ханство, севернее и западнее кочуют ногайцы — прямые наследники ордынской конницы, всё ещё держащие в руках эти степи, хотя былого могущества уже нет.</p>
+    <p>Прямо здесь, на волжском берегу, ещё до прихода русских поселенцев стояло ордынское поселение — русские называли его <span class="fact">Мечётным</span>, по протекавшим рядом речкам Сухая и Мокрая Мечётка. Когда полвека спустя сюда придут строить острог, от прежних домов почти ничего не останется — новые жители быстро растащат их на стройматериалы. Но в земле ещё долго будут находить <span class="fact">золотоордынские монеты</span> — серебряные дирхемы с именами ханов, которых здесь никто уже не помнит.</p>
+    <p>Само место — точка, где Волга ближе всего подходит к Дону, — веками было переволокой: узкий сухопутный участок, где лодки и товары перетаскивали посуху между двумя великими реками. И даже имя, которое эта земля получит совсем скоро — Царицын, — многие возводят не к русскому слову «царица», а к тюркскому <span class="fact">«сары-чин»</span> — «жёлтый остров», или «сары-су» — «жёлтая вода». Степь ещё говорит на своём языке. Ей осталось совсем немного времени.</p>
+
+  </div>
+
+  <div class="wine-card fade-in">
+    <div class="wine-eyebrow">Вино этой эпохи</div>
+    <div class="wine-name">Roqueta · Mas Oliveras Tempranillo</div>
+    <div class="wine-region">Каталония DO · Испания · Красное</div>
+    <div class="wine-note">Пока здесь догорала Золотая Орда, на другом краю света догорало владычество мавров — Испания только что завершила Реконкисту и вступала в свой золотой век. Темпранильо — плотное, терпкое вино той же переходной эпохи: старое ещё не ушло, новое ещё не пришло.</div>
+  </div>
+
+  <footer>
+    <div class="wibes">Vibes Wine — винная карта времени</div>
+    <div class="source">По материалам открытых исторических источников<br>Маруся · ул. Аллея Героев, 1 · Волгоград</div>
+  </footer>
+
+</div>
+</body>
+</html>
