@@ -22,6 +22,8 @@
   .page{ max-width:680px; margin:0 auto; padding:28px 24px 64px; }
 
   .brand-row{ display:flex; align-items:center; justify-content:space-between; padding-bottom:18px; border-bottom:1px solid var(--line); margin-bottom:40px; }
+  .brand-mark{ display:flex; align-items:center; gap:10px; }
+  .logo-icon{ width:20px; height:24px; flex-shrink:0; overflow:visible; }
   .brand{ font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-bright); }
   .brand b{ color:var(--parchment); font-weight:500; }
   .domain{ font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.06em; color:var(--parchment-dim); }
@@ -90,7 +92,15 @@
 <div class="page">
 
   <div class="brand-row">
-    <div class="brand"><b>VIBES WINE</b> · атмосферные вина</div>
+    <div class="brand-mark">
+      <svg class="logo-icon" viewBox="-75 -70 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="0" cy="34" r="7" fill="var(--gold-bright)"/>
+        <path d="M -26,20 A 34,34 0 0,1 8,-14" fill="none" stroke="var(--gold-bright)" stroke-width="4" stroke-linecap="round" opacity="0.95"/>
+        <path d="M -46,32 A 56,56 0 0,1 14,-38" fill="none" stroke="var(--gold-bright)" stroke-width="4" stroke-linecap="round" opacity="0.65"/>
+        <path d="M -66,44 A 78,78 0 0,1 20,-62" fill="none" stroke="var(--gold-bright)" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+      </svg>
+      <div class="brand"><b>VIBES WINE</b> · атмосферные вина</div>
+    </div>
     <div class="domain">vibeswine.ru</div>
   </div>
 
